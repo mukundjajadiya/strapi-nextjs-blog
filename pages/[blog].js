@@ -33,9 +33,10 @@ export async function getStaticPaths() {
     const paths = posts.map((post) => ({
         params: { blog: post.attributes.slug },
       }))
+      console.log(paths);
     return {
       paths,
-      fallback: false,
+      fallback: "blocking",
     };
   }
 
